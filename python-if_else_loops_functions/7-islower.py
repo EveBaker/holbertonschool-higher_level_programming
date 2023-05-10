@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def islower(c):
-        if ord(c) >= 97 and ord(c) <= 122:
-                    return True
-                    else:
-                                return False
+    ascii_code = ord(c)
+    if 97 <= ascii_code <= 122:  # lowercase letter
+        return True
+    else:
+        return False
