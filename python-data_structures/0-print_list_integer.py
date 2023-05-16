@@ -1,17 +1,19 @@
-#!/usr/bin/python3
+:x!
 
 def print_list_integer(my_list=[]):
         for num in my_list:
-                    print("{:d}".format(num))
+                    if type(num) == int:
+                                    print("{:d}".format(num))
+                                            else:
+                                                            raise TypeError("List should only contain integers")
 
-                    # Test cases
-                    print_list_integer([1, 2, 3])
-                    print_list_integer([1])
-                    print_list_integer([])
-                    try:
-                            print_list_integer([1, 2, "H", 9])
-                    except TypeError:
-                            print("Exception occurred")
-
+                                                            # Test cases
+                                                            print_list_integer([1, 2, 3])
+                                                            print_list_integer([1])
+                                                            print_list_integer([])
+                                                            try:
+                                                                    print_list_integer([1, 2, "H", 9])
+                                                            except TypeError:
+                                                                    print("Exception occurred")
 
 
