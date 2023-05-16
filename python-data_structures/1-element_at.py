@@ -5,8 +5,8 @@ def element_at(my_list, idx):
                     return None
                     return my_list[idx]
 
-                # Test cases
-                print(element_at([1, 2, 3], 3))  # Correct output: None
-                print(element_at([1, 2, 3], -1))  # Correct output: None
-                print(element_at([1], 0))  # Correct output: 1
-                print(element_at([1], 1))  # Correct output: None
+        # Test cases
+print(element_at([1, 2, 3], 3))  # Correct output: None
+print(element_at([1, 2, 3], -1))  # Correct output: None
+print(element_at([1], 0))  # Correct output: 1
+print(element_at([1], 1))  # Correct output: None
