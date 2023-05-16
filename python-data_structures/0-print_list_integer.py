@@ -2,29 +2,16 @@
 
 def print_list_integer(my_list=[]):
         for num in my_list:
-                    if type(num) is not int:
-                                    raise TypeError("list must contain only integers")
-                                        print("{:d}".format(num))
+                    print("{:d}".format(num))
 
-                                        # Test cases
-                                        try:
-                                                my_list = [1, 2, 3]
-                                                    print_list_integer(my_list)
-                                                        # Output: 1
-                                                            #         2
-                                                                #         3
+                    # Test cases
+                    print_list_integer([1, 2, 3])
+                    print_list_integer([1])
+                    print_list_integer([])
+                    try:
+                            print_list_integer([1, 2, "H", 9])
+                    except TypeError:
+                            print("Exception occurred")
 
-                                                                    my_list = [1]
-                                                                        print_list_integer(my_list)
-                                                                            # Output: 1
 
-                                                                                my_list = []
-                                                                                    print_list_integer(my_list)
-                                                                                        # No output
-
-                                                                                            my_list = [1, 2, "H", 9]
-                                                                                                print_list_integer(my_list)
-                                                                                                    # Output: TypeError: list must contain only integers
-                                        except TypeError as error:
-                                                print(error)
 
