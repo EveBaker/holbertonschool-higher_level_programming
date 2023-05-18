@@ -1,58 +1,73 @@
 #!/usr/bin/python3
 """
-Square module.
-This module cobtains a class that defines a square"""
+1-square module
+This module defines the Square class, which represents a square.
+"""
 
 
 class Square:
     """
-    Represents a square.
-    Attributes:
-    __size (int): The size of the square.
+    Square class
+    This class represents a square
     """
 
 
-def __init__ (self,size):
+def __init__(self,size):
     """
-    Initializes a Square instance.
-    Args:
-    size (int): The size of the square.
+    Initalizes an instance of the square class.
     """
     self.__size = size
 
 
+def size(self):
+    """
+    Getter method for the size of the attribute.
+    """
+    return self.__size
+
 
 def dict_(self):
     """
-    Retrieves the dictionary representation of the Square instance.
-    Returns:
-    dict: The dictionary representation containing the size.
+    Getter method to retrieve the square attributes as a dictionary.
     """
-    return {'size': self.__size}
+    return self.__dict__
 
 
-mysquare = Square(3)
-print(type(mysquare))
-print(mysquare.dict_)
-
-
-mysquare = Square(89)
-print(type(mysquare))
-print(mysquare.dict_)
+if __name__ == "main__":
+    my_square = Square(3)
+    print(type(my_square))
+    print(my_square.dict_)
 
 
 try:
-    print(mysquare.size)
-except Exception as e:
+    print(my_square.size)
+except AttributeError as e:
     print(e)
 
 
-mysquare = Square(3)
-print(type(mysquare))
-print(mysquare.dict_)
+try:
+    print(my_square._Square__size_)
+except AttributeError as e:
+    print(e)
+
+
+my_square = Square(89)
+print(type(my_square))
+print(my_square.dict_)
+
+
+my_square = Square(3)
+print(type(my_square))
+print(my_square.dict_)
 
 
 try:
-    print(type(mysquare))
-except Exception as e:
+    print(my_square.size)
+except AttributeError as e:
+    print(e)
+
+
+try:
+    print(my_square._Square__size)
+except AttributeError as e:
     print(e)
