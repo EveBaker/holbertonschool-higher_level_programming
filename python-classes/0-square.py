@@ -4,6 +4,7 @@
 
 This module defines the Square class, which represents a square.
 """
+
 class Square:
     """
     Square class
@@ -11,11 +12,14 @@ class Square:
     This class represents a square.
     """
 
-def __init__(self):
-    """Initalizes an instace of the square class."""
-    pass
+    def __init__(self):
+        """
+        Initializes an instance of the Square class.
+        """
+        pass
+
 
 if __name__ == "__main__":
     my_square = Square()
-print(type(my_square))
-print(my_square.__dict__)
+    print(type(my_square))
+    print(my_square.__dict__)
