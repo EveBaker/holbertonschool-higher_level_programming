@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-1-square.py: This module defines a Square class that represents a square shape.
-"""
+Square module.
+This module cobtains a class that defines a square"""
 
 
 class Square:
