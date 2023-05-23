@@ -47,8 +47,43 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-    def area(self):
+    def __str__(self):
         """
-        Returns the area of the rectangle
+        String representation of the rectangle
         """
-        return self.__width * self.__height
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return '\n'.join(['#' * self.__width] * self.__height)
+
+    def __repr__(self):
+        """
+        String representation of the rectangle for recreating the object
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
+
+
+my_rectangle = Rectangle(2, 4)
+print(str(my_rectangle))  # Correct output: Prints the rectangle with '#'
+print(repr(my_rectangle))  # Correct output: Prints the representation of the rectangle
+
+print("--")
+
+print(my_rectangle)  # Correct output: Prints the rectangle with '#'
+
+print("--")
+
+my_rectangle_rep = repr(my_rectangle)
+new_rectangle = eval(my_rectangle_rep)
+print(new_rectangle)  # Correct output: Prints the recreated rectangle object
+
+print("--")
+
+my_rectangle_rep = repr(my_rectangle)
+new_rectangle = eval(my_rectangle_rep)
+print(repr(new_rectangle))  # Correct output: Prints the representation of the recreated rectangle
+
+print("--")
+
+my_rectangle_rep = repr(my_rectangle)
+new_rectangle = eval(my_rectangle_rep)
+print(my_rectangle != new_rectangle)  # Correct output: Prints True (objects are not the same)
