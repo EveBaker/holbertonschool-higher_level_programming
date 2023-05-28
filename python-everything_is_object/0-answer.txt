@@ -1,0 +1,5 @@
+to print the type of an object in Python, you can use the 'type' function.
+What is it used for?:
+The type function in Python is used to determine the type or class of an object. It returns the type of the object as a value of the built-in type class. 
+This function is particularly useful when you want to perform type checking or introspection in your code. 
+By using the type function, you can identify the data type or class of an object and make decisions or perform operations based on that information.
