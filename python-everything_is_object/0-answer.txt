@@ -1,2 +1,1 @@
-def type(obj):
-    return obj.__class__
+type
