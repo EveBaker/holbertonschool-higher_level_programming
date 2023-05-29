@@ -1,0 +1,11 @@
+What does this script print?
+
+a = (1, 2)
+b = (1, 2)
+a is b
+
+False
+
+why false?
+Although a and b have the same values (1, 2), they are not referring to the same tuple object. Each time you define a tuple, a new object is created in memory. 
+Therefore, a is b checks for object identity and returns False because a and b are different tuple objects, even though their contents are the same.
