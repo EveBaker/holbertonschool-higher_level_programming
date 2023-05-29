@@ -1,0 +1,7 @@
+a = (1, 2)
+Is a a tuple? Answer with Yes or No.
+
+Yes
+
+why yes?
+In Python, parentheses are used to define tuples. In the code a = (1, 2), the values 1 and 2 are enclosed in parentheses, indicating that it is a tuple containing those two elements. Therefore, a is indeed a tuple.
