@@ -1,0 +1,17 @@
+What does this script print?
+
+def increment(n):
+    n += 1
+
+a = 1
+increment(a)
+print(a)
+
+1
+
+why is it 1?
+In the given code, a function increment is defined, which takes a parameter n and increments it by 1 using the += operator.
+Then, a variable a is assigned the value 1. When increment(a) is called, the value of a is passed as an argument to the increment function.
+However, integers in Python are immutable, which means their values cannot be changed.
+Inside the increment function, the n += 1 operation creates a new integer object with the value 2 and assigns it to the local variable n. This does not modify the original integer object referred to by a.
+Therefore, when print(a) is executed, it still prints the original value of a, which is 1. The increment function does not affect the value of a outside of the function.
