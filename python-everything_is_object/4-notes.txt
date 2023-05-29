@@ -1,0 +1,12 @@
+In the following code, do a and b point to the same object? Answer with Yes or No.
+
+>>> a = 89
+>>> b = a
+
+yes
+
+Yes. In the given code, a and b point to the same object.
+When a = 89 is executed, a new integer object with the value 89 is created, and a is assigned to reference that object.
+Then, b = a is executed, which assigns b to reference the same object that a is referencing. In this case, both a and b point to the same integer object with the value 89.
+
+Therefore, the answer is Yes, a and b point to the same object.
