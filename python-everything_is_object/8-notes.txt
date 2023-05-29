@@ -1,0 +1,12 @@
+
+What do these 3 lines print?
+
+>>> s1 = "Best School"
+>>> s2 = "Best School"
+>>> print(s1 == s2)
+
+True
+
+why is this true?
+In the given code, s1 is assigned the string "Best School", and s2 is also assigned the string "Best School". Both s1 and s2 contain the same sequence of characters.
+When print(s1 == s2) is executed, it compares the values of s1 and s2. Since both strings have the same content, the comparison evaluates to True.
