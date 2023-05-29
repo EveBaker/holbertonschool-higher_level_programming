@@ -1,0 +1,16 @@
+10. And with a list, is it equal
+mandatory
+What do these 3 lines print?
+
+>>> l1 = [1, 2, 3]
+>>> l2 = [1, 2, 3] 
+>>> print(l1 == l2)
+
+True
+
+why is it true?
+In the given code, l1 is assigned a list [1, 2, 3], and l2 is assigned a different list [1, 2, 3]. Both l1 and l2 have the same elements in the same order.
+When print(l1 == l2) is executed, it compares the values of l1 and l2. Since both lists have the same elements in the same order, the comparison evaluates to True. 
+The == operator checks for equality between the elements of the lists.
+Note that this comparison checks if the elements in the lists are equal, but it does not check if the lists refer to the same object in memory. 
+In this case, l1 and l2 are different list objects, but their contents are equal, resulting in the comparison returning True.
