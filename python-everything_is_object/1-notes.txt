@@ -1,0 +1,7 @@
+How do you get the variable identifier (which is the memory address in the CPython implementation)?:
+you use the id command
+
+why is this used?:
+The id function in Python is used to retrieve the unique identifier or memory address of an object. 
+It returns an integer that represents the object's identity.
+
