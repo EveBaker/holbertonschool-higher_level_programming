@@ -1,0 +1,12 @@
+In the following code, do a and b point to the same object? Answer with Yes or No.
+
+>>> a = 89
+>>> b = 100
+
+No it does not
+
+why doesnt it?
+In Python, integers are immutable objects, which means their values cannot be changed after they are created. 
+When you assign a value to a variable, such as a = 89 and b = 100, Python creates two separate integer objects in memory with the respective values. 
+Since integers are immutable, any subsequent assignment or modification will create a new object.
+Therefore, in the given code snippet, a and b are separate objects with different values (a = 89 and b = 100), and they do not point to the same memory location or object.
