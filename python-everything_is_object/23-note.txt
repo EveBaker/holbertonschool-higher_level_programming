@@ -1,0 +1,9 @@
+a = (1, )
+Is a a tuple? Answer with Yes or No.
+
+Yes
+
+why yes?
+In Python, parentheses are used to define tuples. In the code a = (1, ), the value 1 is enclosed in parentheses, indicating that it is a tuple with a single element. 
+The trailing comma after 1 is allowed and commonly used to differentiate a tuple with one element from a regular expression enclosed in parentheses.
+Therefore, a is considered a tuple with one element, and the answer is "Yes".
