@@ -1,0 +1,14 @@
+>>> id(a)
+139926795932424
+>>> a
+[1, 2, 3, 4]
+>>> a = a + [5]
+>>> id(a)
+Will the last line of this script print 139926795932424? Answer with Yes or No.
+
+No
+
+why no?
+The initial value of a is a list [1, 2, 3, 4], and its memory address (obtained using id(a)) is 139926795932424.
+When you perform the operation a = a + [5], a new list is created by concatenating the existing list a with [5]. This creates a new object in memory. 
+Therefore, the assignment a = a + [5] assigns the new list object to a, and the memory address of a will be different from the initial memory address.
