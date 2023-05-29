@@ -1,0 +1,19 @@
+What does this script print?
+
+def assign_value(n, v):
+    n = v
+
+l1 = [1, 2, 3]
+l2 = [4, 5, 6]
+assign_value(l1, l2)
+print(l1)
+
+[1, 2, 3]
+
+why this?
+In the given code, a function assign_value is defined, which takes two parameters n and v. Inside the function, the line n = v assigns the value of v to the local variable n. 
+This reassignment does not modify the original list object referred to by l1 outside the function.
+Then, two lists l1 and l2 are defined with the values [1, 2, 3] and [4, 5, 6] respectively. When assign_value(l1, l2) is called, the lists l1 and l2 are passed as arguments to the assign_value function.
+Inside the assign_value function, the line n = v reassigns the value of v to the local variable n. However, this reassignment does not modify the original list object referred to by l1. 
+It only changes the local variable n within the function's scope.
+Therefore, when print(l1) is executed after calling assign_value(l1, l2), it prints the original list [1, 2, 3]. The assign_value function does not affect the value of l1 outside of the function.
