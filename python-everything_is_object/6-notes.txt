@@ -1,0 +1,11 @@
+What do these 3 lines print?
+
+>>> s1 = "Best School"
+>>> s2 = s1
+>>> print(s1 == s2)
+
+True
+
+why is this true?
+In the given code, s1 is assigned the string "Best School". Then, s2 is assigned the value of s1, which means both s1 and s2 refer to the same string object in memory.
+When print(s1 == s2) is executed, it compares the values of s1 and s2. Since they refer to the same string object with the content "Best School", the comparison evaluates to True.
