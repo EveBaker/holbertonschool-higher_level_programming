@@ -1,0 +1,12 @@
+In the following code, do a and b point to the same object? Answer with Yes or No.
+
+>>> a = 89
+>>> b = 89
+
+yes
+
+why is it yes?
+In Python, small integers within a specific range are cached and reused for efficiency. 
+This is known as integer caching or integer interning. The range of integers that are cached may vary based on the implementation and version of Python.
+In the given code snippet, the value 89 falls within the range of integers that are cached. When you assign a = 89, Python checks if an integer object with the value 89 already exists in the cache. 
+If it does, both a and b are assigned references to the same cached object. This is why a and b point to the same object.
