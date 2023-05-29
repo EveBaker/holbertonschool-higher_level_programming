@@ -1,0 +1,14 @@
+What does this script print?
+
+l1 = [1, 2, 3]
+l2 = l1
+l1.append(4)
+print(l2)
+
+[1, 2, 3, 4]
+
+why is [1, 2, 3, 4] printed out
+In the given code, l1 is assigned a list [1, 2, 3], and l2 is assigned the same list object as l1 using the assignment l2 = l1. Both l1 and l2 refer to the same list object in memory.
+When l1.append(4) is executed, it modifies the list object referred to by l1 by appending the value 4 to it. 
+Since l2 and l1 point to the same list object, any changes made to the list object through one variable are reflected when accessing it through the other variable.
+Therefore, when print(l2) is executed, it prints the contents of the modified list object [1, 2, 3, 4].
