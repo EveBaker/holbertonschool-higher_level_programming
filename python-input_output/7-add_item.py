@@ -1,50 +1,57 @@
+
 #!/usr/bin/python3
 """
-Script: 7-add_item
+Module: 7-add_item
 
-This script adds all arguments to a Python list and saves them to a file.
+Description:
+    This module provides a script that adds all command-line arguments to a Python list and saves them to a file.
+
+Usage:
+    ./7-add_item.py [arguments]
+
+Arguments:
+    [arguments] - The arguments to be added to the list.
+
+File Output:
+    The arguments are saved as a JSON representation in a file named "add_item.json". If the file doesn't exist, it will be created.
 """
 
 import sys
-from os import path
-from 5-save_to_json_file import save_to_json_file
-from 6-load_from_json_file import load_from_json_file
+import json
+from typing import List
 
-def add_arguments_to_list(filename, arguments):
+
+def add_items_to_list(filename: str, items: List[str]):
     """
-    Add arguments to a Python list and save them to a file.
+    Add items to a Python list and save it to a file.
 
     Args:
-        filename (str): The name of the file to save the list.
-        arguments (list): List of arguments to add.
+        filename (str): The name of the output file.
+        items (List[str]): The list of items to be added.
 
     Returns:
         None
     """
-    # Check if the file exists
-    if path.exists(filename):
-        # Load the existing list from the file
-        my_list = load_from_json_file(filename)
-    else:
-        my_list = []
+    my_list = []
 
-    # Add the arguments to the list
-    my_list.extend(arguments)
+    # Load existing list from file if it exists
+    try:
+        with open(filename, 'r') as file:
+            my_list = json.load(file)
+    except FileNotFoundError:
+        pass
+
+    # Add new items to the list
+    my_list.extend(items)
 
     # Save the updated list to the file
-    save_to_json_file(my_list, filename)
-
-
-def main():
-    # Name of the file to save the list
-    filename = "add_item.json"
-
-    # Arguments passed to the script (excluding the script name itself)
-    arguments = sys.argv[1:]
-
-    # Add the arguments to the list and save them to the file
-    add_arguments_to_list(filename, arguments)
+    with open(filename, 'w') as file:
+        json.dump(my_list, file)
 
 
 if __name__ == "__main__":
-    main()
+    # Remove the script name from the arguments
+    arguments = sys.argv[1:]
+
+    # Add items to the list and save to file
+    add_items_to_list("add_item.json", arguments)
