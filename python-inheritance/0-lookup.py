@@ -32,6 +32,7 @@ def lookup(obj):
     return dir(obj)
 
 
+# Example usage
 b = Base()
 u = User()
 print(u.id)
