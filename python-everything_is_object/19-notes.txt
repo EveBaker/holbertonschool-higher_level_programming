@@ -1,0 +1,2 @@
+This implementation utilizes list slicing with no start or end indices ([:]) to create a new list object containing the same elements as the input list. 
+This results in a copy of the list without modifying the original list.

@@ -1,0 +1,13 @@
+What do these 3 lines print?
+
+>>> s1 = "Best School"
+>>> s2 = "Best School"
+>>> print(s1 is s2)
+
+True
+
+why is this true?
+In the given code, s1 is assigned the string "Best School", and s2 is also assigned the string "Best School". Both s1 and s2 contain the same sequence of characters.
+When print(s1 is s2) is executed, it checks for object identity using the is operator. 
+Since string literals in Python are interned, which means that the same string value will refer to the same object in memory, s1 and s2 actually refer to the same string object.
+Therefore, the comparison s1 is s2 evaluates to True, indicating that s1 and s2 point to the same string object.

@@ -1,0 +1,11 @@
+What do these 3 lines print?
+
+>>> s1 = "Best"
+>>> s2 = s1
+>>> print(s1 is s2)
+
+True
+
+why does this print true?
+In the given code, s1 is assigned the string "Best". Then, s2 is assigned the value of s1, which means both s1 and s2 refer to the same string object in memory.
+When print(s1 is s2) is executed, it checks for object identity using the is operator. Since s1 and s2 refer to the same string object, the comparison evaluates to True.

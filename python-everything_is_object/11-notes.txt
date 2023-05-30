@@ -1,0 +1,13 @@
+What do these 3 lines print?
+
+>>> l1 = [1, 2, 3]
+>>> l2 = [1, 2, 3] 
+>>> print(l1 is l2)
+
+False
+
+why is this false?
+In the given code, l1 is assigned a list [1, 2, 3], and l2 is assigned a different list [1, 2, 3]. Although both l1 and l2 have the same elements in the same order, they are separate list objects in memory.
+When print(l1 is l2) is executed, it checks for object identity using the is operator. Since l1 and l2 refer to different list objects, the comparison evaluates to False. 
+The is operator checks if two variables refer to the same object in memory, not just if their contents are equal.
+In this case, l1 and l2 have the same elements, but they are distinct list objects, so l1 is l2 returns False.

@@ -1,0 +1,13 @@
+>>> a
+[1, 2, 3]
+>>> id (a)
+139926795932424
+>>> a += [4]
+>>> id(a)
+Will the last line of this script print 139926795932424? Answer with Yes or No.
+
+Yes
+
+why yes?
+The initial value of a is a list [1, 2, 3], and its memory address (obtained using id(a)) is 139926795932424.
+When you perform the operation a += [4], it modifies the existing list a in-place by appending 4 to it. Since the list is modified in-place, the memory address of a remains the same.

@@ -1,0 +1,12 @@
+What does this script print?
+
+a = (1)
+b = (1)
+a is b
+
+True
+
+why true? 
+In Python, small integers are cached and reused for efficiency. 
+When you assign the value 1 to both a and b, the interpreter reuses the same cached integer object for both variables. 
+As a result, a is b returns True because they refer to the same object in memory.

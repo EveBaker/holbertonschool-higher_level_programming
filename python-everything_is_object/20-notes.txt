@@ -1,0 +1,7 @@
+a = ()
+Is a a tuple? Answer with Yes or No.
+
+Yes
+
+why yes?
+In Python, parentheses are used to define tuples. Even though the tuple has no elements, it is still considered a tuple. Therefore, a = () assigns an empty tuple to the variable a.

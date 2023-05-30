@@ -1,0 +1,18 @@
+What does this script print?
+
+def increment(n):
+    n.append(4)
+
+l = [1, 2, 3]
+increment(l)
+print(l)
+
+[1, 2, 3, 4]
+
+why is it printed?
+In the given code, a function increment is defined, which takes a parameter n representing a list. Inside the function, the append method is used to add the value 4 to the list n.
+Then, a list l is defined with the values [1, 2, 3]. When increment(l) is called, the list l is passed as an argument to the increment function. 
+Since lists are mutable objects in Python, modifications made to the list object within the function are reflected outside the function as well.
+Inside the increment function, the n.append(4) operation modifies the list object referred to by n by appending the value 4 to it. 
+This modification affects the original list object l because both n and l refer to the same list object.
+Therefore, when print(l) is executed after calling increment(l), it prints the modified list [1, 2, 3, 4]. The increment function modifies the list object l directly.

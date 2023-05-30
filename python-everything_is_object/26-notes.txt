@@ -1,0 +1,11 @@
+What does this script print?
+
+a = ()
+b = ()
+a is b
+
+True
+
+why True?
+In Python, empty tuples, like a = () and b = (), are treated as singleton objects. This means that they refer to the same object in memory. 
+Therefore, a is b checks for object identity and returns True because both a and b refer to the same empty tuple object.

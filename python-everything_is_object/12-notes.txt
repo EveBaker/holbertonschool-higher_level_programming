@@ -1,0 +1,13 @@
+What do these 3 lines print?
+
+>>> l1 = [1, 2, 3]
+>>> l2 = l1
+>>> print(l1 is l2)
+
+True
+
+why is this true?
+In the given code, l1 is assigned a list [1, 2, 3], and l2 is assigned the same list object as l1 using the assignment l2 = l1. Both l1 and l2 refer to the same list object in memory.
+When print(l1 is l2) is executed, it checks for object identity using the is operator. Since l1 and l2 refer to the same list object, the comparison evaluates to True. 
+The is operator checks if two variables refer to the same object in memory.
+In this case, l1 and l2 point to the same list object, so l1 is l2 returns True.
