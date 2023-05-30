@@ -30,9 +30,3 @@ def lookup(obj):
         A list of strings containing the names of attributes and methods of the object.
     """
     return dir(obj)
-
-
-# Example usage
-b = Base()
-u = User()
-print(u.id)
