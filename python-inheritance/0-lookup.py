@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Base():
     """My base class"""
     __nb_instances = 0
