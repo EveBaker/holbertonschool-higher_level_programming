@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 Module: 7-add_item
@@ -13,7 +12,7 @@ Arguments:
     [arguments] - The arguments to be added to the list.
 
 File Output:
-    The arguments are saved as a JSON representation in a file named "add_item.json". If the file doesn't exist, it will be created.
+    The arguments are saved as a JSON representation in a file named "add_item.json". If the file already exists, the items are appended to it.
 """
 
 import sys
