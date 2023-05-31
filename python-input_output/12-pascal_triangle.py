@@ -7,9 +7,6 @@ def pascal_triangle(n):
     """
     Generates Pascal's Triangle of size n.
 
-    Args:
-        n (int): The number of rows in the triangle.
-
     Returns:
         list: A list of lists representing Pascal's Triangle.
     """
