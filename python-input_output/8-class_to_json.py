@@ -7,12 +7,6 @@ This module provides a function to convert an object of a class to a JSON-serial
 def class_to_json(obj):
     """
     Converts an object to a JSON-serializable dictionary.
-
-    Args:
-        obj: An instance of a class.
-
-    Returns:
-        A dictionary containing the serialized attributes of the object.
     """
     if not hasattr(obj, "__dict__"):
         return {}
