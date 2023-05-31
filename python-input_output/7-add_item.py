@@ -4,13 +4,6 @@ Module: 7-add_item
 
 Description:
     This module provides a script that adds all command-line arguments to a Python list and saves them to a file.
-
-Usage:
-    ./7-add_item.py [arguments]
-
-Arguments:
-    [arguments] - The arguments to be added to the list.
-
 File Output:
     The arguments are saved as a JSON representation in a file named "add_item.json". If the file already exists, the items are appended to it.
 """
@@ -23,13 +16,6 @@ from typing import List
 def add_items_to_list(filename: str, items: List[str]):
     """
     Add items to a Python list and save it to a file.
-
-    Args:
-        filename (str): The name of the output file.
-        items (List[str]): The list of items to be added.
-
-    Returns:
-        None
     """
     my_list = []
 
