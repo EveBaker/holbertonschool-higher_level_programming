@@ -9,11 +9,6 @@ Description:
 def write_file(filename="", text=""):
     """
     Write a string to a text file (UTF8) and return the number of characters written.
-
-    Args:
-        filename (str): The name of the text file (default is an empty string).
-        text (str): The string to be written to the file.
-
     Returns:
         int: The number of characters written to the file.
     """
