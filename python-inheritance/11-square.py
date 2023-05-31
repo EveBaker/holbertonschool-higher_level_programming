@@ -18,9 +18,7 @@ class Square(Rectangle):
     def __init__(self, size):
         """
         Initializes a Square instance.
-
-        Args:
-            size (int): The size of the square.
+    
         """
         self.__size = 0
         self.integer_validator("size", size)
@@ -30,8 +28,5 @@ class Square(Rectangle):
     def __str__(self):
         """
         String representation of the Square instance.
-
-        Returns:
-            str: The formatted string representation.
         """
         return "[Square] {}/{}".format(self.__size, self.__size)
