@@ -19,10 +19,6 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """
         Initializes a Rectangle instance.
-
-        Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
         """
         self.__width = 0
         self.__height = 0
@@ -33,8 +29,7 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """
-        String representation of the Rectangle instance.
-
+        String representation of the Rectangle instance
         Returns:
             str: The formatted string representation.
         """
