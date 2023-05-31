@@ -2,10 +2,8 @@
 """
 5-base_geometry.py:
 This module provides an empty class called BaseGeometry.
-
-Classes:
-    BaseGeometry:
-        An empty class serving as the base class for other geometry-related classes.
+BaseGeometry:
+An empty class serving as the base class for other geometry-related classes.
 """
 
 class BaseGeometry:
