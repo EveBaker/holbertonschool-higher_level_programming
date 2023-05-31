@@ -9,12 +9,6 @@ Description:
 def read_file(filename=""):
     """
     Read a text file and print its content to stdout.
-
-    Args:
-        filename (str): The name of the text file (default is an empty string).
-
-    Returns:
-        None
     """
     with open(filename, 'r', encoding='utf-8') as file:
         print(file.read(), end='')
