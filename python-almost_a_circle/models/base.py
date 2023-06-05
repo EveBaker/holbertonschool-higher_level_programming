@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-"""
-Module:rectangle.py:
-This module defines the Rectangle class.
-"""
+"""Module:base.py"""
+class Base:
+    """Base class for managing id attribute"""
+    __nb_objects = 0
 
-
-class Rectangle:
-    """
-    Rectangle class for representing rectangle
-    """
-
-
-    def __init__(self, width, height):
-        """
-        Initialize Rectangle instance with width and height"""
+    def __init__(self, id=None):
+        """Initialize Base instance with id"""
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
