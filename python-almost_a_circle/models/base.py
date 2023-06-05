@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module:base.py"""
 
+
 class Base:
     """Base class for managing id attribute"""
     __nb_objects = 0
