@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module: rectangle
+Module: rectangle:
 This module defines the Rectangle class.
 """
 class Rectangle:
@@ -11,3 +11,8 @@ class Rectangle:
     def __init__(self, width, height):
         """
         Initialize Rectangle instance with width and height"""
+
+
+
+        self.width = width
+        self.height = height
