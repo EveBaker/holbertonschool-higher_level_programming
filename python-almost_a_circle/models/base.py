@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """Module:base.py"""
+
+
 class Base:
     """Base class for managing id attribute"""
     __nb_objects = 0
+
 
     def __init__(self, id=None):
         """Initialize Base instance with id"""
