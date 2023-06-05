@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """
 Module:rectangle.py:
 This module defines the Rectangle class.
