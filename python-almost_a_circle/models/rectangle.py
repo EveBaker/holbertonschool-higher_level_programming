@@ -170,3 +170,13 @@ class Rectangle(Base):
             print()
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
+
+
+
+    def update(self, *args):
+        """
+        Updates the attributes of the rectangle using no-keyword arguments.
+        """
+        attrs = ["id", "width", "height", "x", "y"]
+        for i in range(len(args)):
+            setattr(self, attrs[i], args[i])
