@@ -1,14 +1,23 @@
 #!/usr/bin/python3
-""" This module writes the class Square that inherits from Rectangle class."""
+
+"""
+This module defines the Square class, which represents a square shape.
+"""
+
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
-    """A class representing a square, which is a special type of rectangle."""
+    """
+    A class representing a square, which is a special type of rectangle.
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
         """
         Initializes a square object.
         """
+        if not isinstance(size, int) or size <= 0:
+            raise ValueError("Size must be a positive integer.")
         self.width = size
         self.height = size
         self.x = x
@@ -35,3 +44,4 @@ class Square(Rectangle):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
+
