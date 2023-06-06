@@ -22,18 +22,7 @@ class Base:
         of list_dictionaries. """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-
-        # Check the type of objects in the list
-        obj_type = type(list_dictionaries[0])
-
-        # Convert each object to its dictionary representation
-        dict_list = [obj.to_dictionary() for obj in list_dictionaries]
-
-        # Serialize the dictionary list based on the object type
-        if obj_type.__name__ in ["Rectangle", "Square"]:
-            return json.dumps([obj.__dict__ for obj in list_dictionaries])
-        else:
-            return json.dumps(dict_list)
+        return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
