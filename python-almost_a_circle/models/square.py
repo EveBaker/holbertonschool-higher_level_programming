@@ -17,6 +17,7 @@ class Square(Rectangle):
         """Return a string representation of the Square instance"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
+
     @property
     def size(self):
         """ Getter for the size attribute """
@@ -39,15 +40,8 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """
-        Returns the dictionary representation of the square.
-        """
-        return {
-            "id": self.id,
-            "size": self.__width,
-            "x": self.__x,
-            "y": self.__y
-        }
+        """ Returns the dictionary representation of a Square """
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
 
     def update(self, *args, **kwargs):
         """ Updates the Square attributes """
