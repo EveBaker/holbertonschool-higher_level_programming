@@ -17,20 +17,19 @@ class Square(Rectangle):
         """Return a string representation of the Square instance"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
-
     @property
     def size(self):
-        """ Getter for the size attribute """
+        """Getter for the size attribute"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """ Setter for the size attribute """
+        """Setter for the size attribute"""
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """ Updates the Square attributes """
+        """Updates the Square attributes"""
         if args:
             attributes = ['id', 'size', 'x', 'y']
             for attr, val in zip(attributes, args):
@@ -40,15 +39,5 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """ Returns the dictionary representation of a Square """
+        """Returns the dictionary representation of a Square"""
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
-
-    def update(self, *args, **kwargs):
-        """ Updates the Square attributes """
-        if args:
-            attributes = ['id', 'size', 'x', 'y']
-            for attr, val in zip(attributes, args):
-                setattr(self, attr, val)
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
