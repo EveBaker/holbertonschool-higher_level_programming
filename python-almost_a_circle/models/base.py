@@ -18,13 +18,11 @@ class Base:
         else:
             self.id = id
 
+
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ Static method that Returns: the JSON string representation
-        of a list of dictionaries.
-        Args:
-            list_dictionaries (list): list of dictionaries
-        """
+        """Static method that returns the JSON string representation
+        of a list of dictionaries."""
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
