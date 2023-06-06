@@ -5,7 +5,7 @@ import json
 
 
 class Base:
-    """ Base class will be the “base” of all other classes in this project. """
+    """ Base class will be the 'base' of all other classes in this project. """
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -26,14 +26,14 @@ class Base:
 
     @classmethod
     def from_json_string(cls, json_string):
-        """ Static method that Returns: the list of the JSON string """
+        """ Static method that returns the list of the JSON string. """
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ Class method writes the JSON representation of a string to a file. """
+        """ Class method that writes the JSON representation of a string to a file. """
         filename = cls.__name__ + ".json"
         if not list_objs:
             list_objs = []
@@ -48,7 +48,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Class method that returns an instance of a class. """
-        # create a dummy instance for either cls to be created
+        # create a dummy instance for the respective class to be created
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -57,21 +57,23 @@ class Base:
             dummy = cls()
         # update the dummy instance with the dictionary
         dummy.update(**dictionary)
-        # we created the instance of the class with all attrs set
+        # return the created instance
         return dummy
 
     @classmethod
     def load_from_file(cls):
-        """ Class method that Returns: A list of instances. """
+        """ Class method that returns a list of instances. """
         # create a class name JSON file
         filename = cls.__name__ + ".json"
-        # try to open the file
+        instances = []
         try:
             with open(filename, "r") as file:
                 # read the file and convert to list of dictionaries
                 list_dicts = cls.from_json_string(file.read())
                 # convert list of dictionaries to list of instances
-                return [cls.create(**dictionary) for dictionary in list_dicts]
-        # if empty file or file does not exist return empty list
+                for dictionary in list_dicts:
+                    instance = cls.create(**dictionary)
+                    instances.append(instance)
         except FileNotFoundError:
             return []
+        return instances
