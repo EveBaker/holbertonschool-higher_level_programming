@@ -1,49 +1,13 @@
-#!/usr/bin/python3
+# models/base.py
 
-class Rectangle(Base):
-    """Rectangle class that inherits from Base"""
+class Base:
+    """Base class for managing id attribute"""
+    __nb_objects = 0
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize Rectangle instance with width, height, x, y, and id"""
+    def __init__(self, id=None):
+        """Initialize Base instance with id"""
         if id is not None:
             self.id = id
         else:
-            self.id = self.__nb_objects + 1
-            self.__nb_objects += 1
-
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
-
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        self.__width = value
-
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        self.__height = value
-
-    @property
-    def x(self):
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        self.__x = value
-
-    @property
-    def y(self):
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        self.__y = value
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
