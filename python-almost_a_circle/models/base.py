@@ -24,10 +24,10 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
-    @staticmethod
-    def from_json_string(json_string):
+    @classmethod
+    def from_json_string(cls, json_string):
         """ Static method that Returns: the list of the JSON string """
-        if not json_string:
+        if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
 
@@ -51,8 +51,10 @@ class Base:
         # create a dummy instance for either cls to be created
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
-        if cls.__name__ == "Square":
+        elif cls.__name__ == "Square":
             dummy = cls(1)
+        else:
+            dummy = cls()
         # update the dummy instance with the dictionary
         dummy.update(**dictionary)
         # we created the instance of the class with all attrs set
