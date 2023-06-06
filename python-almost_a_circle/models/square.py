@@ -21,21 +21,15 @@ class Square(Rectangle):
         self.x = x
         self.y = y
         self.id = id
-        self.validate_integer(size, 'size')
-        self.validate_integer(x, 'x')
-        self.validate_integer(y, 'y')
+        self.validate_positive_integer(size, "size")
+        self.validate_positive_integer(x, "x")
+        self.validate_positive_integer(y, "y")
 
     def __str__(self):
         """
         Returns a string representation of the square.
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
-    def area(self):
-        """
-        Calculates and returns the area of the square.
-        """
-        return self.width * self.height
 
     def display(self):
         """
@@ -47,7 +41,7 @@ class Square(Rectangle):
             print(" " * self.x + "#" * self.width)
 
     @staticmethod
-    def validate_integer(value, name):
+    def validate_positive_integer(value, name):
         """
         Validates if the given value is a positive integer.
         """
