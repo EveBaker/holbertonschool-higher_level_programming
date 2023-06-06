@@ -10,9 +10,8 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ class constructor for Base class with optional id attribute """
-
-
+        """ class constructor for Base class with optional id attribute.
+        """
         if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
@@ -22,8 +21,10 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ Static method that Returns: the JSON string representation
-        of a list of dictionaries. """
-        
+        of a list of dictionaries.
+        Args:
+            list_dictionaries (list): list of dictionaries
+        """
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
@@ -31,6 +32,10 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ Static method that Returns: the list of the JSON string
+
+        Args:
+            json_string (string): a string representing a list of
+            dictionaries
         """
         if not json_string:
             return []
@@ -38,8 +43,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ Class method writes the JSON representation of a string to a file."""
-
+        """ Class method writes the JSON representation of a string to a file.
+        """
         filename = cls.__name__ + ".json"
         if not list_objs:
             list_objs = []
@@ -53,7 +58,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ Class method that returns an instance of a class"""
+        """ Class method that returns an instance of a class."""
         # create a dummy instance for either cls to be created
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
