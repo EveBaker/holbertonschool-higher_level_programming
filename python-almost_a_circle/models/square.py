@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This module defines the Square class, a subclass of Rectangle.
+This module defines the Square class, which inherits from Rectangle.
 """
 
 from models.rectangle import Rectangle
