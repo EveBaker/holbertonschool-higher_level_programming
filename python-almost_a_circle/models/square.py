@@ -25,14 +25,7 @@ class Square(Rectangle):
         Raises:
             ValueError: If size, x, or y is not a positive integer.
         """
-        self.width = size
-        self.height = size
-        self.x = x
-        self.y = y
-        self.id = id
-        self.validate_positive_integer(size, "size")
-        self.validate_positive_integer(x, "x")
-        self.validate_positive_integer(y, "y")
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """
@@ -42,40 +35,6 @@ class Square(Rectangle):
             str: The string representation of the square.
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
-    @staticmethod
-    def validate_positive_integer(value, name):
-        """
-        Validates if the given value is a positive integer.
-
-        Args:
-            value: The value to be validated.
-            name (str): The name of the value for error message purposes.
-
-        Raises:
-            ValueError: If the value is not a positive integer.
-        """
-        if not isinstance(value, int) or value <= 0:
-            raise ValueError(f"{name} must be a positive integer.")
-
-    def area(self):
-        """
-        Computes and returns the area of the square.
-
-        Returns:
-            int: The area of the square.
-        """
-        return self.width * self.height
-
-    def display(self):
-        """
-        Prints a visual representation of the square using '#' characters.
-        """
-        for _ in range(self.y):
-            print()
-        for _ in range(self.height):
-            print(" " * self.x + "#" * self.width)
-
 
 if __name__ == "__main__":
     s1 = Square(5)
