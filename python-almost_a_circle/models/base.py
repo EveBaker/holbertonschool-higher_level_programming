@@ -1,65 +1,82 @@
 #!/usr/bin/python3
-"""
-This module defines the Base class, which serves as the base for all other classes.
-"""
+""" This module writes the first class for this project the Base class """
 
 import json
 
-class Base:
-    """Base class for managing id attribute and providing utility methods."""
 
+class Base:
+    """ Base class will be the “base” of all other classes in this project.
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initializes a Base instance with an optional id."""
-        if id is not None:
-            self.id = id
-        else:
+        """ class constructor for Base class with optional id attribute """
+
+
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+        else:
+            self.id = id
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Converts a list of dictionaries to a JSON string."""
+        """ Static method that Returns: the JSON string representation
+        of a list of dictionaries. """
+        
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
-        """Converts a JSON string to a list of dictionaries."""
+        """ Static method that Returns: the list of the JSON string
+        """
         if not json_string:
             return []
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON representation of a list of objects to a file."""
+        """ Class method writes the JSON representation of a string to a file."""
+
         filename = cls.__name__ + ".json"
         if not list_objs:
             list_objs = []
+        # convert list objects to list of dictionaries
         list_dicts = [obj.to_dictionary() for obj in list_objs]
+        # convert list dictionaries to json string
         json_str = cls.to_json_string(list_dicts)
+        # write the JSON string to a file
         with open(filename, "w") as file:
             file.write(json_str)
 
     @classmethod
     def create(cls, **dictionary):
-        """Creates an instance of a class with attribute values already set."""
+        """ Class method that returns an instance of a class"""
+        # create a dummy instance for either cls to be created
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
             dummy = cls(1)
+        # update the dummy instance with the dictionary
         dummy.update(**dictionary)
+        # we created the instance of the class with all attrs set
         return dummy
 
     @classmethod
     def load_from_file(cls):
-        """Loads a list of instances from a JSON file."""
+        """ Class method that Returns: A list of instances.
+        """
+        # create a class name JSON file
         filename = cls.__name__ + ".json"
+        # try to open the file
         try:
             with open(filename, "r") as file:
+                # read the file and convert to list of dictionaries
                 list_dicts = cls.from_json_string(file.read())
+                # convert list of dictionaries to list of instances
                 return [cls.create(**dictionary) for dictionary in list_dicts]
+        # if empty file or file does not exist return empty list
         except FileNotFoundError:
             return []
