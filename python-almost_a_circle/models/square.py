@@ -16,13 +16,14 @@ class Square(Rectangle):
         """
         Initializes a square object.
         """
-        if not isinstance(size, int) or size <= 0:
-            raise ValueError("Size must be a positive integer.")
         self.width = size
         self.height = size
         self.x = x
         self.y = y
         self.id = id
+        self.validate_integer(size, 'size')
+        self.validate_integer(x, 'x')
+        self.validate_integer(y, 'y')
 
     def __str__(self):
         """
@@ -44,4 +45,13 @@ class Square(Rectangle):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+    @staticmethod
+    def validate_integer(value, name):
+        """
+        Validates if the given value is a positive integer.
+        """
+        if not isinstance(value, int) or value <= 0:
+            raise ValueError(f"{name} must be a positive integer.")
+
 
