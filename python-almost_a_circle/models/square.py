@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" This module writes the class Square that inherits from Rectangle class."""
 from models.rectangle import Rectangle
 
 class Square(Rectangle):
