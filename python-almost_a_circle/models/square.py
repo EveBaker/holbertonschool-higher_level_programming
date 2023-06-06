@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This module defines the Square class, which represents a square shape.
+This module defines the Square class, a subclass of Rectangle.
 """
 
 from models.rectangle import Rectangle
@@ -9,13 +9,14 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """
-    A class representing a square, which is a special type of rectangle.
+    A class representing a square.
     """
 
     def __init__(self, size, x=0, y=0, id=None):
         """
         Initializes a square object.
         """
+
         self.width = size
         self.height = size
         self.x = x
@@ -29,12 +30,14 @@ class Square(Rectangle):
         """
         Returns a string representation of the square.
         """
+
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     def display(self):
         """
-        Prints a visual representation of the square using '#' characters.
+        Displays a visual representation of the square.
         """
+
         for _ in range(self.y):
             print()
         for _ in range(self.height):
@@ -45,6 +48,6 @@ class Square(Rectangle):
         """
         Validates if the given value is a positive integer.
         """
+
         if not isinstance(value, int) or value <= 0:
             raise ValueError(f"{name} must be a positive integer.")
-
