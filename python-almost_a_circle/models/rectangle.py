@@ -121,7 +121,6 @@ class Rectangle(Base):
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
-
     def __str__(self):
         """
         Returns a string representation of the rectangle.
@@ -129,56 +128,26 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
-
-def update(self, *args, **kwargs):
-    """
-    Updates the attributes of the rectangle using both no-keyword and keyword arguments.
-    """
-    attrs = ["id", "width", "height", "x", "y"]
-    if args:
-        for i in range(len(args)):
-            setattr(self, attrs[i], args[i])
-    elif kwargs:
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-def to_dictionary(self):
-    """
-    Returns the dictionary representation of the rectangle.
-    """
-    return {
-        "id": self.id,
-        "width": self.width,
-        "height": self.height,
-        "x": self.x,
-        "y": self.y
-    }
-
-def area(self):
+    def update(self, *args, **kwargs):
         """
-        Calculates and returns the area of the rectangle.
+        Updates the attributes of the rectangle.
         """
-        return self.__width * self.__height
-
-
-def display(self):
-        """
-        Displays the rectangle using the '#' character, taking into account x and y coordinates.
-        """
-        for _ in range(self.__y):
-            print()
-        for _ in range(self.__height):
-            print(" " * self.__x + "#" * self.__width)
-
-
-def update(self, *args, **kwargs):
-        """
-        Updates the attributes of the rectangle using both no-keyword and keyword arguments.
-        """
-        attrs = ["id", "width", "height", "x", "y"]
         if args:
-            for i in range(len(args)):
-                setattr(self, attrs[i], args[i])
+            attrs = ["id", "width", "height", "x", "y"]
+            for attr, value in zip(attrs, args):
+                setattr(self, attr, value)
         elif kwargs:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+            for attr, value in kwargs.items():
+                setattr(self, attr, value)
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of the rectangle.
+        """
+        return {
+            "id": self.id,
+            "width": self.__width,
+            "height": self.__height,
+            "x": self.__x,
+            "y": self.__y
+        }
