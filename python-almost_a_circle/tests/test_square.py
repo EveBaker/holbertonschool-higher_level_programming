@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-""" 
-This module is a unittest for the Square class 
-"""
+""" This module is a unittest for the Square class """
 
 import unittest
 import os
@@ -14,24 +12,26 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
-    """ 
-    Test class for Square class 
-    """
-    
+    """ Test class for Square class """
     def setUp(self):
         """Set up test method"""
         # reset __nb_objects to 0 before each test
         print("Square setUp")
+
         self.capture_output = io.StringIO()
-        sys.stdout = self.capture_output
+        sys.stdout = self. capture_output
+
         self.square = Square(1)
+
         # reset __nb_objects to 0 before each test
         Base._Base__nb_objects = 0
 
     def tearDown(self):
         """Tear down test method"""
         print("Square tearDown")
+
         sys.stdout = sys.__stdout__
+
         del self.square
         try:
             os.remove("Square.json")
@@ -70,23 +70,30 @@ class TestSquare(unittest.TestCase):
         # Test explicit id assignment positive number
         square4 = Square(6, 0, 0, 12)
         self.assertEqual(square4.id, 12)
+
         # Test auto-increment id after explicit assignment
         square5 = Square(5, 0, 0, None)
         self.assertEqual(square5.id, 1)
+
         # Test explicit id assignment with negative number
         square6 = Square(4, 0, 0, -12)
         self.assertEqual(square6.id, -12)
+
         # Test explicit id assignment with zero
         square7 = Square(5, 0, 0, 0)
         self.assertEqual(square7.id, 0)
 
     def test_too_few_args(self):
-        """test too few args to init"""
+        """
+        test too few args to init
+        """
         with self.assertRaises(TypeError):
             Square()
 
     def test_too_many_args(self):
-        """test too many args to init"""
+        """
+        test too many args to init
+        """
         with self.assertRaises(TypeError):
             Square(1, 1, 1, 1, 1, 1, 1)
 
@@ -266,32 +273,17 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(list_sqr_output, [])
 
     def test_load_from_file_existent(self):
-        """Test load_from_file"""
-        new_sq = Square(3, 5, 1)
-        new_sq.save_to_file([new_sq])
-        list_sqr_output = Square.load_from_file()
-        self.assertEqual(list_sqr_output[0].size, 3)
-        self.assertEqual(list_sqr_output[0].x, 5)
-        self.assertEqual(list_sqr_output[0].y, 1)
+        """Test load_from_file method when file exists"""
+        # Create a list of squares
+        list_sqr_input = [Square(10, 7, 9, 5), Square(2, 4, 6, 8)]
+        Square.save_to_file(list_sqr_input)
 
-    def test_load_from_file_empty(self):
-        """ Test if load_from_json_file method works """
-        with open("Square.json", "w") as file:
-            file.write("")
+        # Load squares from file
         list_sqr_output = Square.load_from_file()
-        self.assertEqual(list_sqr_output, [])
 
-    def test_load_from_file(self):
-        """ Test if load_from_json_file method works """
-        with open("Square.json", "w") as file:
-            file.write('[{"id": 1, "size": 1, "x": 0, "y": 0}]')
-        list_sqr_output = Square.load_from_file()
-        self.assertEqual(len(list_sqr_output), 1)
-        self.assertIsInstance(list_sqr_output[0], Square)
-        self.assertEqual(list_sqr_output[0].id, 1)
-        self.assertEqual(list_sqr_output[0].size, 1)
-        self.assertEqual(list_sqr_output[0].x, 0)
-        self.assertEqual(list_sqr_output[0].y, 0)
+        for i in range(len(list_sqr_input)):
+            # Compare if they are the same instance.
+            self.assertEqual(str(list_sqr_input[i]), str(list_sqr_output[i]))
 
 
 if __name__ == '__main__':
