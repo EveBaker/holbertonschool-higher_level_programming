@@ -1,12 +1,25 @@
 #!/usr/bin/python3
-"Displays all values in the states table of the database hbtn_0e_0_usa"
-import sys
+"""
+return all table values (table 'states')
+parameters given to script: username, password, database
+"""
+
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    c = db.cursor()
-    c.execute("SELECT * \
-                FROM `states` \
-                WHERE BINARY `name` = '{}'".format(sys.argv[4]))
-    [print(state) for state in c.fetchall()]
+
+    # connect to database
+    db = MySQLdb.connect(host="localhost",
+                        port=3306,
+                        user=argv[1],
+                        passwd=argv[2],
+                        db=argv[3])
+
+    # create cursor to exec queries using SQL
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    for row in cursor.fetchall():
+        print(row)
+    cursor.close()
+    db.close()
