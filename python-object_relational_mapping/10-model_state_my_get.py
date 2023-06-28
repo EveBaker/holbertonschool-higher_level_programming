@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """
 Prints the state object with the namme passed as argument from the db
 """
