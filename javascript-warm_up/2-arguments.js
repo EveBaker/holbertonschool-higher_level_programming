@@ -2,7 +2,7 @@
 const process = require('process');
 let resp;
 if (process.argv.length === 3) {
-    resp = 'Argumrnt found';
+    resp = 'Argument found';
 }
 else if (process.argv.length < 3) {
     resp = 'No argument';
