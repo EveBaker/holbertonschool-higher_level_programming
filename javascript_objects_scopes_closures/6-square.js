@@ -11,4 +11,4 @@ class Square extends square {
         this.charPrint(c);
     }
 }
-module.exports = Square
+module.exports = Square;
