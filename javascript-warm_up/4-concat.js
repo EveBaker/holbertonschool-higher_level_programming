@@ -1,4 +1,4 @@
-#!/usr/bim/node
+#!/usr/bin/node
 const process = require('process');
 
 let val1;
